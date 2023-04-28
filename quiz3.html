@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+  input{
+    border: 1px solid black;
+    border-radius: 25px;
+    height: 22px;
+  }
+  input:hover,input:focus{
+  box-shadow: 10px 10px 13px gold;
+  /* box-shadow: 10px   green; */
+  
+  
+  
+  }
+  .cc:hover,cc:focus{
+    box-shadow: 10px 10px 13px red;
+  
+  }
+  
+      </style>
+<body>
+  <center>
+<h1>login form</h1>
+<input type="text" class="cc" placeholder="enter email" id="lemail"><br><br>
+<input type="password" placeholder="enter password" class="ab" id="lpass"><br><br>
+
+<button onclick='appendText()'>LOGIN</button>
+</center>
+
+<script>
+  function appendText(){
+  var email = document.getElementById('lemail').value
+  var pass = document.getElementById('lpass').value
+ var a = localStorage.getItem('email')
+   var b = localStorage.getItem('pass')
+if (email === a && pass === b) {
+  alert('login successfully')
+  location.href='./quiz4.html'
+} else {
+  alert('wrong email password')
+  location.href='./quiz2.html'
+}
+
+}
+  
+</script>
+</body>
+
+</html>

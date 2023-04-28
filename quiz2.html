@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+  input{
+    border: 1px solid black;
+    border-radius: 25px;
+    height: 22px;
+  }
+  input:hover,input:focus{
+  box-shadow: 10px 10px 13px crimson;
+  /* box-shadow: 10px   green; */
+  
+  
+  
+  }
+  .cc:hover,cc:focus{
+    box-shadow: 10px 10px 13px rgb(117, 34, 114);
+  
+  }
+  
+      </style>
+<body>
+<center>
+<h1>sign up form</h1>
+<input class="cc" type="text" placeholder="enter email" id="semail"><br><br>
+<input type="password" placeholder="enter password" class="ab" id="spass"><br><br>
+
+<button onclick="signup()">sign up</button></center>
+<script>
+function signup(){
+var email = document.getElementById('semail').value
+var pass = document.getElementById('spass').value
+localStorage.setItem('email',email)
+localStorage.setItem('pass',pass)
+alert('Data inserted successfully')
+location.href = './quiz3.html'
+
+
+}</script>
+</body>
+
+</html>

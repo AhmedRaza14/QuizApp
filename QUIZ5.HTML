@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>quiz application</title>
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+    #result{
+      color: red
+      
+    }
+    /* .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+     */
+    #result{
+position: relative;
+top: 50px;
+
+
+
+    }
+    </style>
+  </head>
+  
+  <body>
+    
+    <div>
+    <div id="kesadiya">
+      
+      
+      
+      
+      
+      
+    </div>
+    <div class="quiz-container" id="quiz">
+      <div>
+        
+      
+      <div id="clockdiv" align="right" class="bxz">
+      
+      </div>
+      </div>
+      <div class="quiz-header">
+        
+        <h2 id="question">Question Text</h2>
+        
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" class="answer">
+            <label for="a" id="a_text">Answer</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="b" class="answer">
+            <label for="b" id="b_text">Answer</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="c" class="answer">
+            <label for="c" id="c_text">Answer</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="d" class="answer">
+            <label for="d" id="d_text">Answer</label>
+          </li>
+          
+   
+         
+      
+          
+        </ul>
+      </div>
+      <button id="submit">Submit</button>
+    </div>
+    </div>
+    <br><br><br><br>
+    <center>
+    <!-- <div class="modal"> -->
+      
+    <p style="background-color: black; position: relative; top: 200px; right: 325px;" id="result"></p>
+    </div>
+    </center>
+      <script>
+        
+       /* function logout() {
+          localStorage.clear()
+          alert('Logout Successfully')
+          location.href = './quiz.html'
+        }
+        
+        function logout() {
+            localStorage.clear()
+            alert('Logout Successfully')
+            location.href = './quiz.html'
+          }*/
+        var time_in_minutes = 5;
+  var current_time = Date.parse(new Date());
+  var deadline = new Date(current_time + time_in_minutes*60*1000);
+  
+  
+  function time_remaining(endtime){
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor( (t/1000) % 60 );
+      var minutes = Math.floor( (t/1000/60) % 60 );
+      var hours = Math.floor( (t/(1000*60*60)) % 24 );
+      var days = Math.floor( t/(1000*60*60*24) );
+      return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
+  }
+  
+function  logout() {
+    localStorage.clear()
+    alert('Logout Successfully')
+    location.href = './quiz.html'
+  }
+  
+  
+  
+  function run_clock(id,endtime){
+      var clock = document.getElementById(id);
+      function update_clock(){
+          var t = time_remaining(endtime);
+          clock.innerHTML =t.minutes+':'+t.seconds;
+          if(t.total<=0){ clearInterval(timeinterval);
+          quiz.innerHTML = `
+                     <h2> ${score}/${quizData.length} questions correctly</h2>
+                     
+                  <button onclick="location.reload()">Start Again</button>
+                  <button onclick="logout()">Logout</button>
+                  <button onclick='foo()'>Grade</button>`
+            
+            
+          }
+      }
+      update_clock(); // run function once at first to avoid delay
+      var timeinterval = setInterval(update_clock,1000);
+  }
+  run_clock('clockdiv',deadline);
+      
+        
+        
+        function foo() {
+ if (score >= 9) {
+      result.innerText = "Excellent";
+    } else if (score >= 8) {
+      result.innerText = "Very Good";
+    } else if (score >= 7) {
+      result.innerText = "Good";
+    } else if (score >= 6) {
+      result.innerText = "Keep it up";
+    } else {
+        result.innerText = "Fail";
+       }
+    }
+    </script>
+    <script src="quiz.js"></script>
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

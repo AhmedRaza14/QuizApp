@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style>
+#h4{
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+</style>
+<script>
+      window.onload = function() {
+        // Get the value from localStorage
+        var value = localStorage.getItem('myValue');
+        
+        // Display the value on the page
+        var output = document.getElementById('value-output');
+        output.innerText = value;
+      };
+      function aage(){
+          location.href='./QUIZ5.HTML'
+      }
+    </script>
+  </head>
+  <body>
+      <center>
+    <div id="h4">
+        <h1>welcome &nbsp;
+    <h1 id="value-output"></h1>
+</h1>
+
+</div> 
+
+<button onclick="aage()">Let's Start</button>
+
+</center>    </body>
+</html>

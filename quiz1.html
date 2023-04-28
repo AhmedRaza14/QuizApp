@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+input{
+  border: 1px solid black;
+  border-radius: 25px;
+  height: 22px;
+}
+input:hover,input:focus{
+box-shadow: 10px 10px 13px green;
+/* box-shadow: 10px   green; */
+
+
+
+}
+.cc:hover,cc:focus{
+  box-shadow: 10px 10px 13px blue;
+
+}
+
+    </style>
+    <script>
+      function submitValue() {
+        // Get the value entered by the user
+        var input = document.getElementById('value-input');
+        var value = input.value;
+        
+        // Store the value in localStorage
+        localStorage.setItem('myValue', value);
+        
+        // Redirect to the second page
+        window.location.href = 'quiz2.html';
+      }
+    </script>
+  </head>
+  <body>
+    <br><br><br><br><br><br><br><br><center>
+    <h1>Introduction Form</h1>
+    <input type="text" class="cc" id="value-input" placeholder="Name" required><br><br><br>
+    <input type="text" id="value-input" placeholder="Father's Name" required><br><br>
+    <button onclick="submitValue()">Submit</button>
+</center>  
+
+</body>
+</html>
